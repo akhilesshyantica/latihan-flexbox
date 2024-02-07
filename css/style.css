@@ -1,0 +1,207 @@
+@font-face {
+    font-family: "Montserrat";
+    src: url(../font/Montserrat-Regular.otf) format('truetype');
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: "Montserrat",sans-serif;
+    background-color: #ddd;
+    line-height: 1.65;
+    padding-bottom: 1000px;
+}
+
+/* latihan 1  */
+
+.container-satu{
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+}
+
+.kolom-utama{
+    flex: 3;
+    /* flex-grow dapat juga ditulis flex saja. */
+    order: 2;
+    /* order untuk mengatur urutan */
+}
+
+.sidebar-satu{
+    flex: 1;
+    order: 1;
+}
+
+.sidebar-dua{
+    flex: 1;
+    order: 3;
+}
+
+/* Latihan 2 */
+
+.container-dua{
+    max-width: 800px;
+    /* jadi maksimal width nya 800, kalau kita besarkan windownya,
+    dia akan tetap. dan kalau kita kecilkan dia akan responsive*/
+    margin: 50px auto;
+   
+}
+.layanan{
+    margin-bottom: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.layanan.satu {
+    background-color: rgb(34, 123, 207);
+}
+.layanan.dua{
+    background-color: rgb(18, 178, 18);
+}
+.layanan.tiga{
+    background-color: rgb(243, 52, 52);
+}
+
+/* Latihan 3 */
+.container-tiga{
+    max-width: 800px;
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.thumbnail{
+    width: 50%;
+}
+/* thumbnail width 50% agar saat dibuka di hp
+gambarnya jadi cuma 2 */
+
+.thumbnail img{
+    width: 100%;
+}
+/* thumbnail img width 100% agar ukuran gambarnya
+100% terhadap pembungkusnya */
+/* maksud lain adalah gambar tampil dalam ukuran 
+asli 100% nya */
+
+
+/* Latihan 4 */
+.container-empat{
+    max-width: 800px;
+    margin: 50px auto;
+    /* display: flex; */
+}
+
+.card{
+    border: 1px solid #aaa;
+    border-radius: 10px;
+    background-color: #eee;
+    overflow: hidden;
+    margin: 10px;
+    flex: 1;
+    width: calc(100vw - 4em);
+    
+   
+    
+    
+}
+
+.card .header{
+    height: 150px;
+    background-color: #666;
+   
+}
+
+.card .content{
+    text-align: center;
+    padding-bottom: 20px;
+    
+}
+.container-empat.card{
+    margin: auto;
+}
+/* .card.besar{
+    transform: scale(1.12);
+} */
+
+/* Latihan 5 */
+.container-lima{
+    width: 500px;
+    height: 500px;
+    margin: 50px auto;
+    border: 5px solid black;
+    display: flex;
+}
+
+.kotak{
+    width: 100px;
+    height: 100px;
+    background-color: brown;
+    color: white;
+    text-align: center;
+    margin: auto;
+    display: flex;
+}
+.kotak span{
+    margin: auto;
+}
+
+/* dari latihan 5, dapat kita simpulkan bahwa display flex juga 
+dapat digunakan secara nested/bersarang */
+
+
+
+/* Responsive */
+/* kita buat media query agar class layanan menjadi 
+responsive saat berada di device apapun, terkhusus yang
+kecil seperti smartphone */
+/* media query menentukan kalau  lebarnya berapa, maka
+pakai css yang mana*/
+
+@media screen and (min-width:600px){
+    /* latihan 2 */
+    .container-dua{
+        display: flex;
+        justify-content: space-between;
+    }
+    .layanan {
+        width: 30%;
+    }
+    /* karena elemennya ada 3 untuk 100%, maka kita beri nilai masing masing 30%*/
+
+    /* latihan 3 */
+    .thumbnail{
+        width: 25%;
+    }
+    /* thumbnail width 25% biar kalo widthnya 600
+    atau diatas 600px, jadinya ada 4 gambar 
+    dalam satu baris. */
+
+    /* latihan 4 */
+  .container-empat{
+    display: flex;
+  }
+  .card{
+    width: 100%;
+    
+  }
+  .card.besar{
+    transform: scale(1.11);
+  }
+}
+/* cara bacanya, kalau minimal width nya pas 600px aja
+atau diatas 600px aja, maka pakai yang ini  (yang kita definisikan 
+dalam kurung kurawalnya)*/
+@media screen and (max-width :576px){
+    .container-empat{
+     width: 100%;
+     margin: 10px 0;
+    }
+}
